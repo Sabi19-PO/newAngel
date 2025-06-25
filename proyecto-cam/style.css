@@ -1,0 +1,1066 @@
+:root {
+  /* Definición de variables de colores personalizados */
+  --morado: #945D87;
+  --rosado: #EDD1EC;
+  --amarillo: #EECC70;
+  --rojo: #D71232;
+  --vino: #82071B;
+}
+
+* {
+  /* Reset de márgenes y padding, y se aplica el modelo de caja border-box */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* Fuente base y color de fondo del cuerpo de la página */
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--rosado);
+}
+
+.header {
+  /* Estilo del encabezado: se mantiene fijo en la parte superior, con fondo y sombra */
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: var(--rosado);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.header-content {
+  /* Contenedor del contenido dentro del header: logo, título y menú */
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  flex-wrap: wrap;
+}
+
+.logo-container {
+  /* Estilo para el contenedor del logo */
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  /* Imagen del logo: redondeada y con tamaño fijo */
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1rem;
+}
+
+.titulo h1 {
+  /* Título principal: color vino, grande y en negrita */
+  color: var(--vino);
+  font-size: 5rem;
+  font-weight: bold;
+}
+
+.titulo h2 {
+  /* Subtítulo: también color vino y un poco más pequeño */
+  color: var(--vino);
+  font-size: 3rem;
+}
+
+section {
+  /* Margen al hacer scroll para que no quede cubierto por el header */
+  scroll-margin-top: 200px;
+}
+
+#nosotros .titulo-nosotros {
+  /* Centrado del título de la sección 'Nosotros' */
+  text-align: center;
+  width: 100%;
+}
+
+.nav ul {
+  /* Lista del menú de navegación: horizontal y con espacio entre elementos */
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.nav a {
+  /* Enlaces del menú: estilo sin subrayado, con color, fondo y bordes redondeados */
+  text-decoration: none;
+  color: black;
+  background-color: #f0f0f0;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.nav a:hover,
+.nav a.activo {
+  /* Efecto hover y enlace activo: fondo vino y texto blanco */
+  background-color: var(--vino);
+  color: white;
+}
+
+.contenido {
+  /* Contenedor principal del contenido: sin padding */
+  padding: 0;
+}
+
+.historia {
+  /* Sección de historia: layout flexible con fondo azul claro y padding */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 71vh;
+  background-color: #d8f6f6;
+  padding: 4rem 2rem;
+}
+
+.texto-historia {
+  /* Parte del texto de la historia */
+  flex: 1;
+  min-width: 280px;
+  padding: 2rem;
+}
+
+.texto-historia h2 {
+  /* Título del texto de la historia */
+  font-size: 4rem;
+  font-weight: bold;
+  text-align: left;
+}
+
+.nuestra {
+  /* Clase para textos oscuros */
+  color: #333;
+}
+
+.historia-color {
+  /* Color azul para resaltar texto dentro del título */
+  color: #497fc9;
+  text-shadow: 1px 1px 3px #aaa;
+}
+
+.info-relevante {
+  /* Caja de información adicional: fondo blanco, sombra y bordes redondeados */
+  flex: 1;
+  min-width: 280px;
+  padding: 2rem;
+  font-size: 1.2rem;
+  color: #111;
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+  .header-content {
+    /* En móviles, el contenido del header se apila verticalmente */
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav ul {
+    /* El menú se centra y se apila */
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 1rem;
+  }
+
+  .titulo h1 {
+    /* Títulos más pequeños para móviles */
+    font-size: 1.5rem;
+  }
+
+  .titulo h2 {
+    font-size: 0.9rem;
+  }
+
+  .historia {
+    /* En móviles, los elementos se apilan verticalmente */
+    flex-direction: column;
+    height: auto;
+    padding: 3rem 1rem;
+    text-align: center;
+  }
+
+  .texto-historia h2 {
+    font-size: 2.5rem;
+  }
+
+  .info-relevante {
+    margin-top: 2rem;
+  }  
+}
+  
+
+  #nosotros {
+  /* Estilos para la sección "Nosotros" */
+  min-height: 71vh;
+  background-color: #fdfdfd;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+#nosotros .titulo {
+  /* Título de la sección "Nosotros" */
+  font-size: 60px;
+  color: #333;
+  margin-bottom: 40px;
+  font-weight: 900;
+  text-shadow: 2px 2px 4px #ccc;
+}
+
+/* CONTENEDOR Y CARRUSEL */
+.carrusel-contenedor {
+  /* Contenedor del carrusel: ancho limitado y centrado */
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.carrusel {
+  /* Carrusel como fila horizontal desplazable */
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+/* TARJETAS DENTRO DEL CARRUSEL */
+.tarjeta {
+  /* Tarjetas individuales dentro del carrusel */
+  min-height: 600px;
+  flex: 0 0 100%;
+  padding: 30px;
+  border-radius: 20px;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  color: white;
+  box-sizing: border-box;
+}
+
+.tarjeta img {
+  /* Imagen dentro de la tarjeta */
+  max-width: 200px;
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.tarjeta .contenido {
+  /* Contenedor del texto dentro de la tarjeta */
+  text-align: left;
+  max-width: 500px;
+}
+
+.tarjeta h3 {
+  /* Título de la tarjeta */
+  margin: 0;
+  font-size: 28px;
+}
+
+.tarjeta .fechas {
+  /* Fechas con estilo especial */
+  font-style: italic;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+/* VARIACIONES DE COLOR PARA LAS TARJETAS */
+.color1 { background-color: #945D87; } /* morado */
+.color2 { background-color: #EECC70; color: #000; } /* amarillo con texto negro */
+.color3 { background-color: #82071B; } /* vino */
+
+/* FLECHAS DE NAVEGACIÓN DEL CARRUSEL */
+.nav-btn {
+  /* Botones de navegación izquierda y derecha */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  font-size: 40px;
+  color: #333;
+  cursor: pointer;
+  z-index: 20;
+  padding: 10px;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.nav-btn:hover {
+  /* Efecto hover en los botones de navegación */
+  background: rgba(255, 255, 255, 1);
+}
+
+.nav-btn.prev { left: 10px; }
+.nav-btn.next { right: 10px; }
+
+/* VERSIÓN RESPONSIVE PARA CELULARES */
+@media screen and (max-width: 768px) {
+  .tarjeta {
+    /* Tarjetas se apilan verticalmente */
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .tarjeta img {
+    /* Imagen más pequeña en móviles */
+    max-width: 150px;
+  }
+
+  .tarjeta .contenido {
+    /* Contenido se expande al 100% */
+    max-width: 100%;
+  }
+
+  .nav-btn.prev { left: 5px; }
+  .nav-btn.next { right: 5px; }
+}
+
+/* TÍTULOS PARA EVENTOS */
+.titulo-eventos {
+  /* Contenedor del título de eventos */
+  text-align: center;
+  margin-bottom: 30px;
+  padding-top: 50px;
+}
+
+.titulo-eventos h2 {
+  /* Estilo del título */
+  font-size: 2.5em;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.titulo-eventos p {
+  /* Subtítulo o descripción del título */
+  font-size: 1.2em;
+  color: var(--rosado);
+}
+
+
+
+/* Contenedor de todas las tarjetas horizontales con desplazamiento */
+.cards-container {
+  display: flex;
+  gap: 1rem;
+  overflow: hidden; 
+  scroll-behavior: smooth;
+  padding: 1rem;
+  background-color: var(--vino);
+}
+
+
+/* Oculta el scrollbar en navegadores WebKit */
+.cards-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Estilo para cada tarjeta individual del carrusel */
+.card {
+  min-height: 400px;
+  flex: 0 0 auto;
+  width: 300px;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* Imagen dentro de la tarjeta */
+.card-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Fecha en la tarjeta */
+.card-fecha {
+  font-style: italic;
+  margin: 0.5rem 0;
+  color: #555;
+}
+
+/* Descripción en la tarjeta */
+.card-descripcion {
+  font-size: 14px;
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+/* Botón de "Leer más" */
+.leer-mas-btn {
+  padding: 0.5rem 1rem;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.leer-mas-btn:hover {
+  background-color: #005fa3;
+}
+
+/* Modal que aparece al hacer clic en "Leer más" */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.6);
+}
+
+/* Contenido del modal */
+.modal-contenido {
+  background: white;
+  margin: 10% auto;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+}
+
+/* Botón para cerrar el modal */
+.cerrar-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Sección de nuestras instalaciones con video e información */
+.nuestras-instalaciones {
+  background-color: white;
+  color: yellow;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  height: 500px;
+  gap: 20px;
+}
+
+/* Estilo del contenedor de video */
+.video-card {
+  flex: 1;
+  border: 2px solid yellow;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+/* Video embebido dentro del contenedor */
+.video-card iframe {
+  width: 100%;
+  height: 200px;
+  border: none;
+  border-radius: 6px;
+}
+
+/* Contenedor del título de la sección */
+.titulo {
+  flex: 1;
+  text-align: right;
+}
+
+.titulo h2 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+/* Sección de talleres (actividades) con diseño horizontal */
+.talleres-section {
+  min-height: 460px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+  gap: 30px;
+}
+
+/* Carrusel visual con fondo de color degradado */
+.carrusel {
+  position: relative;
+  flex: 1;
+  height: 200px;
+  background-color: #c2e7ff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Fondo decorativo en forma de degradado */
+.fondo {
+  background: linear-gradient(to top, #8bc34a 50%, #c2e7ff 50%);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
+  border-radius: 8px;
+}
+
+/* Flechas para navegar el carrusel */
+.flecha {
+  position: relative;
+  z-index: 1;
+  font-size: 2rem;
+  color: black;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+/* Redefinición de estilos para la sección talleres */
+.talleres-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: var(--amarillo);
+}
+
+/* Contenedor del carrusel de imágenes */
+.carrusel-imagenes {
+  position: relative;
+  width: 300px;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 12px;
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Línea de imágenes en el carrusel */
+.carrusel-imagenes .imagenes {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Imágenes dentro del carrusel (solo una visible a la vez) */
+.carrusel-imagenes img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+  border-radius: 12px;
+}
+
+.carrusel-imagenes img.activa {
+  display: block;
+}
+
+/* Botones del carrusel */
+.btn-carrusel {
+  position: absolute;
+  background-color: rgba(255,255,255,0.7);
+  border: none;
+  font-size: 2rem;
+  padding: 5px 10px;
+  cursor: pointer;
+  z-index: 10;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Posicionamiento izquierdo del botón */
+.btn-carrusel.izquierda {
+  left: 10px;
+}
+
+/* Posicionamiento derecho del botón */
+.btn-carrusel.derecha {
+  right: 10px;
+}
+
+/* Título vertical con orientación de lectura de arriba hacia abajo */
+.titulo-vertical {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 2.5rem;
+  color: var(--morado);
+  font-weight: bold;
+  padding: 10px 20px;
+  white-space: nowrap;
+}
+
+/* Contenedor de la lista de talleres */
+.lista-talleres {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex: 1; /* Ocupa el espacio restante */
+}
+
+/* Estilo de cada taller de la lista */
+.taller {
+  background-color: #f3f3f3;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.taller span {
+  font-size: 1.5rem;
+}
+
+
+
+/* Contenedor principal con flexbox */
+.container {
+  display: flex;
+  justify-content: center;  /* Centra las cards */
+  gap: 3cm;                 /* Separación fija de 3cm */
+  margin-top: 40px;
+  padding: 0 20px;
+  max-width: 100%;
+}
+
+/* Cada lado dentro del container */
+.left {
+  /* Para que la card no crezca demasiado */
+  max-width: 300px;
+}
+
+/* Cards estilo general */
+.card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Lista de postres */
+.lista-postres h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-family: 'Comic Sans MS', cursive;
+}
+
+.lista-postres ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lista-postres li {
+  font-size: 18px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+/* Los iconos de cupcake ya están en el texto, 
+   pero si quieres ponerlos aparte, se puede hacer con pseudo-elementos */
+
+/* Animación y estilos de la card del helado */
+.animacion-helado {
+  max-width: 350px;
+  text-align: center;
+  font-family: 'Comic Sans MS', cursive;
+  position: relative;
+}
+
+/* SVG título arco */
+.animacion-helado svg {
+  position: absolute;
+  top: 40px;         /* Ajusta según lo necesites */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 170px;
+  pointer-events: none; /* Evita que interfiera con clics */
+}
+
+/* Helado */
+.helado {
+  position: relative;
+  width: 80px;
+  height: 100px;
+  margin: 60px auto 0 auto; /* Separamos del SVG que está encima */
+}
+
+.cono {
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  width: 40px;
+  height: 50px;
+  background: #f4a460;
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
+  animation: aparecer 1s ease-in-out forwards;
+}
+
+.bola {
+  position: absolute;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: pink;
+  opacity: 0;
+  top: 10px;
+  animation: caer 1s ease-in-out forwards;
+}
+
+.cereza {
+  position: absolute;
+  top: 0;
+  left: 25px;
+  width: 15px;
+  height: 15px;
+  background: red;
+  border-radius: 50%;
+  box-shadow: 0 0 5px #aa0000;
+  opacity: 0;
+  animation: caer 1s ease-in-out forwards;
+  animation-delay: 1.5s;
+}
+
+@keyframes caer {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: scaleY(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+
+
+/* Sección principal del foro con padding y fondo gris claro */
+.foros-section {
+  padding: 60px 40px;
+  background-color: #f4f4f4;
+}
+
+/* Título centrado para la sección de foros, con fuente cursiva y color gris oscuro */
+.titulo-foros {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 30px;
+  font-family: 'Comic Sans MS', cursive;
+  color: #444;
+}
+
+/* Contenedor del contenido del foro: flex en fila, centrado, con espacio entre elementos y ajuste para múltiples filas */
+.foro-contenido {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Estilo para el iframe de video dentro del foro, con tamaño fijo y máximo ancho relativo al viewport, borde redondeado y sombra */
+.foro-video iframe {
+  width: 560px;
+  height: 315px;
+  max-width: 90vw;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Margen izquierdo para el contenedor del botón del foro */
+.foro-boton {
+  margin-left: 10px;
+}
+
+/* Estilo del botón dentro del foro: padding amplio, fuente grande, sin borde, borde redondeado, color rosa con texto blanco, cursor pointer, fuente cursiva, y transición para el hover */
+.foro-boton button {
+  padding: 15px 25px;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 8px;
+  background-color: #ff99cc;
+  color: white;
+  cursor: pointer;
+  font-family: 'Comic Sans MS', cursive;
+  transition: background-color 0.3s ease;
+}
+
+/* Cambio de color de fondo al pasar el cursor sobre el botón */
+.foro-boton button:hover {
+  background-color: #ff66aa;
+}
+
+/* Modal del foro: oculto por defecto, posición fija con cobertura total, fondo semitransparente oscuro */
+.foro-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Contenido interno del modal: fondo blanco, centrado con margen automático, padding generoso, bordes redondeados, fuente cursiva, color de texto gris oscuro, y sombra */
+.foro-modal-contenido {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 30px;
+  border-radius: 12px;
+  width: 80%;
+  max-width: 600px;
+  font-family: 'Comic Sans MS', cursive;
+  color: #333;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+
+/* Estilo del encabezado dentro del modal, con margen inferior para separar */
+.foro-modal-contenido h3 {
+  margin-bottom: 20px;
+  font-size: 1.5em;
+}
+
+/* Lista sin viñetas dentro del modal y sin padding izquierdo */
+.foro-modal-contenido ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* Estilo de cada elemento de la lista dentro del modal, con margen inferior y tamaño de fuente cómodo */
+.foro-modal-contenido li {
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+/* Botón para cerrar el modal, ubicado a la derecha, con tamaño grande, cursor pointer y color gris */
+.cerrar-foro-modal {
+  float: right;
+  font-size: 28px;
+  cursor: pointer;
+  color: #888;
+}
+
+/* Cambio de color al pasar el cursor sobre el botón cerrar */
+.cerrar-foro-modal:hover {
+  color: #000;
+}
+
+
+
+/* Contenedor principal del footer con fondo vino, texto blanco, padding y fuente */
+.footer {
+  background-color: var(--vino);
+  color: #ffffff;
+  padding: 80px 50px 40px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Contenedor interno del footer: flex para distribuir elementos, con espacio entre ellos y ajuste en varias filas */
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto; /* centra el contenedor horizontalmente */
+}
+
+/* Cada sección dentro del footer: logo, mapa y contacto, con ancho mínimo y texto centrado */
+.footer-logo,
+.footer-mapa,
+.footer-contacto {
+  flex: 1 1 300px; /* crece y se encoge, mínimo 300px */
+  text-align: center;
+}
+
+/* Imagen del logo: tamaño máximo fijo y margen inferior */
+.footer-logo img {
+  max-width: 100px;
+  margin-bottom: 10px;
+}
+
+/* Título del logo con márgenes específicos y tamaño de fuente */
+.footer-logo h3 {
+  margin: 10px 0 5px;
+  font-size: 1.4em;
+}
+
+/* Descripción del logo en cursiva y tamaño un poco menor */
+.footer-logo p {
+  font-style: italic;
+  font-size: 0.95em;
+}
+
+/* Títulos de las secciones de contacto y mapa: margen abajo, tamaño, mayúsculas y color blanco */
+.footer-contacto h4,
+.footer-mapa h4 {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  color: white;
+}
+
+/* Párrafos de contacto con márgenes pequeños y tamaño de fuente legible */
+.footer-contacto p {
+  margin: 5px 0;
+  font-size: 0.95em;
+}
+
+/* Estilo del iframe del mapa: ocupa todo el ancho, altura fija, bordes redondeados, sin borde y sombra */
+.footer-mapa iframe {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  border: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Parte inferior del footer con texto centrado, padding arriba, tamaño pequeño, borde superior y color gris claro */
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 0.85em;
+  border-top: 1px solid --vino; /* probablemente aquí falte var(--vino) para que funcione bien */
+  margin-top: 20px;
+  color: #ccc;
+}
+
+/* Ajustes responsivos para pantallas pequeñas (menos de 768px) */
+@media (max-width: 768px) {
+  /* Cambia la dirección del flex a columna y centra los elementos */
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Cada sección toma máximo 90% del ancho y mantiene texto centrado */
+  .footer-logo,
+  .footer-mapa,
+  .footer-contacto {
+    text-align: center;
+    max-width: 90%;
+  }
+}
+/* Animación infinita hacia la izquierda para eventos */
+.eventos-loop {
+  display: flex;
+  gap: 1rem;
+  animation: deslizar-loop 30s linear infinite;
+  width: max-content;
+}
+
+@keyframes deslizar-loop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+/* Estilos para sección "Nosotros" */
+.carrusel-nosotros {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  height: 400px;
+}
+
+.carrusel-nosotros .tarjeta {
+  width: 1000px;
+  max-width: 90%;
+  text-align: center;
+  background: #f5f5f5;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  transition: opacity 0.5s ease;
+  cursor: pointer;
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.carrusel-nosotros .tarjeta.activa {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.carrusel-nosotros .tarjeta img {
+  width: 100%;
+  border-top-left-radius: 123px;
+  border-top-right-radius: 20px;
+  height: auto;
+}
+
+.carrusel-nosotros .contenido {
+  padding: 15px;
+}
+
+.color1 { background-color: #e0f7fa; }
+.color2 { background-color:  #e0f7fa; }
+.color3 { background-color: #e0f7fa; }
+.carrusel-nosotros .tarjeta {
+  color: black; /* texto negro por defecto */
+}
+
+/* Para las tarjetas con fondo oscuro que necesitan texto blanco */
+.carrusel-nosotros .color1 {
+  background-color: #006064; /* un azul oscuro, cambia si quieres */
+  color: white;
+}
+
+.carrusel-nosotros .color2 {
+  background-color: #fff9c4; /* amarillo clarito */
+  color: black;
+}
+
+.carrusel-nosotros .color3 {
+  background-color: #ffe0b2; /* naranja clarito */
+  color: black;
+}
+.carrusel-nosotros .color1,
+.carrusel-nosotros .color1 * {
+  color: #333333 !important; /* color negro para texto */
+}
+

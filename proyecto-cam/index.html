@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Configuración básica del documento -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CAM Ángel Riviere</title>
+  <!-- Enlace a la hoja de estilos externa -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Enlace al JavaScript -->
+<script src="nosotros.js"></script>
+</head>
+<!-- Ejecuta una animación al cargar la página -->
+<body onload="animarEntrada()">
+
+  <!-- Encabezado principal de la página -->
+  <header class="header" id="miHeader">
+    <div class="header-content">
+      <!-- Contenedor del logo y título -->
+      <div class="logo-container">
+        <img src="./img/logo.png" alt="logo CAM" class="logo" />
+        <div class="titulo">
+          <h1>CAM</h1>
+          <h2>Angel Riviere</h2>
+        </div>
+      </div>
+      <!-- Menú de navegación con enlaces internos -->
+      <nav class="nav">
+        <ul>
+          <li><a href="#" class="activo">INICIO</a></li>
+          <li><a href="#nosotros">NOSOTROS</a></li>
+          <li><a href="#eventos">EVENTOS</a></li>
+          <li><a href="#instalaciones">INSTALACIONES</a></li>
+          <li><a href="#talleres">TALLERES</a></li>
+          <li><a href="#delicias">DELICIAS</a></li>
+          <li><a href="#foros">FOROS</a></li>
+          <li><a href="#contactos">CONTACTOS</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="contenido">
+    <!-- Sección de historia institucional -->
+    <section class="historia">
+      <div class="texto-historia">
+        <h2><span class="nuestra">NUESTRA</span> <span class="historia-color">HISTORIA</span></h2>
+      </div>
+      <div class="info-relevante">
+        <p>
+          Somos una comunidad educativa dedicada a la inclusión de niños con discapacidad...
+        </p>
+      </div>
+    </section>
+-
+   <!-- Sección "Nosotros" con tarjetas en bucle al hacer clic -->
+<section id="nosotros">
+  <h3 class="titulo titulo-nosotros" style="padding-top: 30px; padding-bottom: 30px;">NOSOTROS</h3>
+  <div class="carrusel-nosotros" id="carruselNosotros">
+    <!-- Tarjetas individuales -->
+    <div class="tarjeta color1">
+      <img src="./img/angel.jpg" alt="Ángel Rivière" />
+      <div class="contenido">
+        <h3>Ángel Rivière</h3>
+        <p class="fechas">16 de junio de 1949 - 12 de abril de 2000</p>
+        <p>Fue un psicólogo y científico cognitivo español...</p>
+      </div>
+    </div>
+
+    <div class="tarjeta color2">
+      <img src="./img/angel.jpg" alt="Misión y Visión" />
+      <div class="contenido">
+        <h3>Misión y Visión</h3>
+        <p class="fechas">Nuestra filosofía educativa</p>
+        <p>Promover la inclusión y el desarrollo integral...</p>
+      </div>
+    </div>
+
+    <div class="tarjeta color3">
+      <img src="./img/angel.jpg" alt="Valores Institucionales" />
+      <div class="contenido">
+        <h3>Valores Institucionales</h3>
+        <p class="fechas">Compromiso - Empatía - Respeto</p>
+        <p>Nos guiamos por principios fundamentales...</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+-
+  <!-- Sección de tarjetas de eventos especiales -->
+  <div data-scroll="autoScrollContainer" class="cards-container">
+    <!-- Título de la sección de eventos -->
+    <div id="eventos" class="titulo-eventos">
+      <h2>🌟 EVENTOS ESPECIALES 🌟</h2>
+      <p>Descubre nuestras actividades más recientes y significativas</p>
+    </div>
+-
+<div class="cards-container eventos-animados">
+  <div class="eventos-loop">
+    <!-- Tarjeta 1 de evento -->
+    <div class="card">
+      <img src="./img/postre.jpg" alt="Talleres de repostería" class="card-img" />
+      <p class="card-fecha"><em>08 de mayo</em></p>
+      <p class="card-descripcion">Este es un breve resumen...</p>
+      <button class="leer-mas-btn" data-target="modal1">Leer más...</button>
+      <!-- Modal 1 con información completa -->
+      <div class="modal" id="modal1">
+        <div class="modal-contenido">
+          <span class="cerrar-modal">&times;</span>
+          <h3>Talleres de repostería</h3>
+          <p>"Contenido completo".</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tarjeta 2 de evento -->
+    <div class="card">
+      <img src="./img/madres.png" alt="Día de las madres" class="card-img" />
+      <p class="card-fecha"><em>10 de mayo</em></p>
+      <p class="card-descripcion">Este es un breve resumen...</p>
+      <button class="leer-mas-btn" data-target="modal2">Leer más...</button>
+      <!-- Modal 2 -->
+      <div class="modal" id="modal2">
+        <div class="modal-contenido">
+          <span class="cerrar-modal">&times;</span>
+          <h3>Día de las madres</h3>
+          <p>"Contenido completo 2".</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tarjeta 3 -->
+    <div class="card">
+      <img src="./img/postre.jpg" alt="Evento especial 1" class="card-img" />
+      <p class="card-fecha"><em>15 de junio</em></p>
+      <p class="card-descripcion">Descripción breve del evento especial 1...</p>
+      <button class="leer-mas-btn" data-target="modal3">Leer más...</button>
+      <!-- Modal 3 -->
+      <div class="modal" id="modal3">
+        <div class="modal-contenido">
+          <span class="cerrar-modal">&times;</span>
+          <h3>Evento especial 1</h3>
+          <p>Detalles completos del evento especial 1...</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tarjeta 4 -->
+    <div class="card">
+      <img src="./img/madres.png" alt="Evento especial 2" class="card-img" />
+      <p class="card-fecha"><em>20 de junio</em></p>
+      <p class="card-descripcion">Descripción breve del evento especial 2...</p>
+      <button class="leer-mas-btn" data-target="modal4">Leer más...</button>
+      <!-- Modal 4 -->
+      <div class="modal" id="modal4">
+        <div class="modal-contenido">
+          <span class="cerrar-modal">&times;</span>
+          <h3>Evento especial 2</h3>
+          <p>Detalles completos del evento especial 2...</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tarjeta 5 -->
+    <div class="card">
+      <img src="./img/madres.png" alt="Evento especial 3" class="card-img" />
+      <p class="card-fecha"><em>25 de junio</em></p>
+      <p class="card-descripcion">Descripción breve del evento especial 3...</p>
+      <button class="leer-mas-btn" data-target="modal5">Leer más...</button>
+      <!-- Modal 5 -->
+      <div class="modal" id="modal5">
+        <div class="modal-contenido">
+          <span class="cerrar-modal">&times;</span>
+          <h3>Evento especial 3</h3>
+          <p>Detalles completos del evento especial 3...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Tarjeta 1 de evento -->
+  <div class="card">
+    <img src="./img/postre.jpg" alt="Talleres de repostería" class="card-img" />
+    <p class="card-fecha"><em>08 de mayo</em></p>
+    <p class="card-descripcion">Este es un breve resumen...</p>
+    <button class="leer-mas-btn" data-target="modal1">Leer más...</button>
+    <!-- Modal 1 con información completa -->
+    <div class="modal" id="modal1">
+      <div class="modal-contenido">
+        <span class="cerrar-modal">&times;</span>
+        <h3>Talleres de repostería</h3>
+        <p>"Contenido completo".</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tarjeta 2 de evento -->
+  <div class="card">
+    <img src="./img/madres.png" alt="Día de las madres" class="card-img" />
+    <p class="card-fecha"><em>10 de mayo</em></p>
+    <p class="card-descripcion">Este es un breve resumen...</p>
+    <button class="leer-mas-btn" data-target="modal2">Leer más...</button>
+    <!-- Modal 2 -->
+    <div class="modal" id="modal2">
+      <div class="modal-contenido">
+        <span class="cerrar-modal">&times;</span>
+        <h3>Día de las madres</h3>
+        <p>"Contenido completo 2".</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tarjeta 3 -->
+  <div class="card">
+    <img src="./img/postre.jpg" alt="Evento especial 1" class="card-img" />
+    <p class="card-fecha"><em>15 de junio</em></p>
+    <p class="card-descripcion">Descripción breve del evento especial 1...</p>
+    <button class="leer-mas-btn" data-target="modal3">Leer más...</button>
+    <!-- Modal 3 -->
+    <div class="modal" id="modal3">
+      <div class="modal-contenido">
+        <span class="cerrar-modal">&times;</span>
+        <h3>Evento especial 1</h3>
+        <p>Detalles completos del evento especial 1...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tarjeta 4 -->
+  <div class="card">
+    <img src="./img/madres.png" alt="Evento especial 2" class="card-img" />
+    <p class="card-fecha"><em>20 de junio</em></p>
+    <p class="card-descripcion">Descripción breve del evento especial 2...</p>
+    <button class="leer-mas-btn" data-target="modal4">Leer más...</button>
+    <!-- Modal 4 -->
+    <div class="modal" id="modal4">
+      <div class="modal-contenido">
+        <span class="cerrar-modal">&times;</span>
+        <h3>Evento especial 2</h3>
+        <p>Detalles completos del evento especial 2...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tarjeta 5 -->
+  <div class="card">
+    <img src="./img/madres.png" alt="Evento especial 3" class="card-img" />
+    <p class="card-fecha"><em>25 de junio</em></p>
+    <p class="card-descripcion">Descripción breve del evento especial 3...</p>
+    <button class="leer-mas-btn" data-target="modal5">Leer más...</button>
+    <!-- Modal 5 -->
+    <div class="modal" id="modal5">
+      <div class="modal-contenido">
+        <span class="cerrar-modal">&times;</span>
+        <h3>Evento especial 3</h3>
+        <p>Detalles completos del evento especial 3...</p>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+
+    
+-
+
+  <!-- Sección de instalaciones del CAM -->
+<section id="instalaciones" class="nuestras-instalaciones">
+  <div class="video-card">
+    <!-- Video de YouTube embebido mostrando las instalaciones -->
+    <iframe 
+      src="https://www.youtube.com/embed/a1Femq4NPxs" 
+      title="YouTube video" 
+      frameborder="0" 
+      allowfullscreen>
+    </iframe>
+  </div>
+  <!-- Título de la sección -->
+  <div class="titulo">
+    <h2>NUESTRAS INSTALACIONES</h2>
+  </div>
+</section>
+
+<!-- Sección de talleres con carrusel de imágenes -->
+<section id="talleres" class="talleres-section">
+  <div class="carrusel-imagenes">
+    <!-- Botón para mover el carrusel a la izquierda -->
+    <button class="btn-carrusel izquierda">&#10094;</button>
+    
+    <!-- Contenedor de imágenes del carrusel -->
+    <div class="imagenes">
+      <img src="./img/postre.jpg" alt="Imagen 1" class="activa">
+      <img src="./img/madres.png" alt="Imagen 2">
+      <img src="./img/logo.png" alt="Imagen 3">
+    </div>
+
+    <!-- Botón para mover el carrusel a la derecha -->
+    <button class="btn-carrusel derecha">&#10095;</button>
+  </div>
+
+  <!-- Título vertical decorativo de la sección -->
+  <div class="titulo-vertical">TALLERES</div>
+
+  <!-- Lista de talleres con íconos -->
+  <div class="lista-talleres">
+    <div class="taller"><span>🏋️</span><p>....</p></div> <!-- Taller de ejercicio o educación física -->
+    <div class="taller"><span>🎨</span><p>....</p></div> <!-- Taller de arte o pintura -->
+    <div class="taller"><span>🎭</span><p>....</p></div> <!-- Taller de teatro o expresión corporal -->
+    <div class="taller"><span>🌐</span><p>....</p></div> <!-- Taller de tecnología o internet -->
+  </div>
+</section>
+
+<!-- Sección "DELICIAS" con lista de postres y animación -->
+<div id="delicias" class="container">
+  <div class="left">
+    <!-- Tarjeta con lista de postres que se ofrecen -->
+    <div class="card lista-postres">
+      <h2>Lista de Postres</h2>
+      <ul>
+        <li>🧁 Cupcake de vainilla</li>
+        <li>🧁 Pastel de chocolate</li>
+        <li>🧁 Tarta de fresa</li>
+        <li>🧁 Brownie</li>
+        <li>🧁 Cheesecake</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Tarjeta con animación SVG de texto siguiendo una curva -->
+  <div class="card animacion-helado">
+    <svg width="300" height="170" viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg">
+      <!-- Dibuja un arco curvo donde se alineará el texto -->
+      <path id="arco" d="M20 150 A130 130 0 0 1 280 150" fill="transparent"/>
+      
+      <!-- Texto que sigue el arco como animación decorativa -->
+      <text font-family="'Comic Sans MS', cursive" font-size="24" fill="#333">
+        <textPath href="#arco" startOffset="50%" text-anchor="middle" dy="40">
+          Armando un Helado 🍦
+        </textPath>
+      </text>
+    </svg>
+
+      <!-- Animación helado ciclo: cono, bola, cereza -->
+      <svg width="120" height="160" viewBox="0 0 120 160" xmlns="http://www.w3.org/2000/svg" style="display:block; margin: 20px auto;">
+        <!-- Cono -->
+        <polygon points="60,140 45,90 75,90" fill="#D2B48C" opacity="0">
+          <animate attributeName="opacity" values="0;1;1;0" dur="6s" repeatCount="indefinite" begin="0s" />
+        </polygon>
+
+        <!-- Bola de helado -->
+        <circle cx="60" cy="75" r="16" fill="#FF69B4" opacity="0">
+          <animate attributeName="opacity" values="0;0;1;1;0" dur="6s" repeatCount="indefinite" begin="0s" />
+        </circle>
+
+        <!-- Cereza -->
+        <circle cx="60" cy="57" r="5" fill="#FF0000" opacity="0">
+          <animate attributeName="opacity" values="0;0;0;1;1;0" dur="6s" repeatCount="indefinite" begin="0s" />
+        </circle>
+      </svg>
+    </div>
+</div>
+
+
+<!-- Sección de Foros -->
+<section id="foros" class="foros-section">
+  <!-- Título principal de la sección -->
+  <h2 class="titulo-foros">FOROS</h2>
+
+  <div class="foro-contenido">
+    <!-- Video relacionado con el foro (puede ser informativo o invitación) -->
+    <div class="foro-video">
+      <iframe 
+        src="https://www.youtube.com/embed/a1Femq4NPxs" 
+        title="Video de foro" 
+        frameborder="0" 
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <!-- Botón que abre el modal de convocatorias y avisos -->
+    <div class="foro-boton">
+      <button onclick="abrirModalForo()">📣 Convocatorias y Avisos</button>
+    </div>
+  </div>
+
+  <!-- Modal oculto por defecto, se muestra al hacer clic en el botón -->
+  <div id="modalForo" class="foro-modal">
+    <div class="foro-modal-contenido">
+      <!-- Botón (X) para cerrar el modal -->
+      <span class="cerrar-foro-modal" onclick="cerrarModalForo()">&times;</span>
+      <!-- Título del modal -->
+      <h3>Convocatorias y Avisos</h3>
+      <!-- Lista de eventos o comunicados importantes -->
+      <ul>
+        <li>📅 *Reunión de padres de familia – 15 de junio*</li>
+        <li>📝 *Convocatoria para el concurso de dibujo infantil*</li>
+        <li>🎓 *Ceremonia de fin de cursos – 5 de julio*</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Pie de página del sitio -->
+<footer class="footer">
+  <div id="contactos" class="footer-container">
+
+    <!-- Sección del logo e identidad del CAM -->
+    <div class="footer-logo">
+      <img src="./img/logo.png" alt="Logo CAM" />
+      <h3>CAM Ángel Riviere</h3>
+      <p>Educando con amor e inclusión 💙</p>
+    </div>
+
+    <!-- Sección del mapa con la ubicación del centro -->
+    <div class="footer-mapa">
+      <h4>Ubicación</h4>
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=..." 
+        width="100%" 
+        height="200" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+    <!-- Información de contacto del CAM -->
+    <div class="footer-contacto">
+      <h4>Contacto</h4>
+      <p>📍 San Juan del Río, Querétaro</p>
+      <p>📞 (442) 123-4567</p>
+      <p>✉️ contacto@camriviere.edu.mx</p>
+    </div>
+  </div>
+
+  <!-- Texto legal del pie de página -->
+  <div class="footer-bottom">
+    <p>&copy; 2025 CAM Ángel Riviere. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
