@@ -378,3 +378,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
   mostrarTarjeta(indiceActual); // Mostrar la primera tarjeta al cargar
 });
+
+

@@ -20,6 +20,7 @@ body {
   background-color: var(--rosado);
 }
 
+
 .header {
   /* Estilo del encabezado: se mantiene fijo en la parte superior, con fondo y sombra */
   position: sticky;
@@ -32,31 +33,12 @@ body {
   transition: opacity 0.5s ease-in-out;
 }
 
-.header-content {
-  /* Contenedor del contenido dentro del header: logo, título y menú */
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  flex-wrap: wrap;
-}
-
 .logo-container {
   /* Estilo para el contenedor del logo */
   display: flex;
   align-items: center;
 }
 
-.logo {
-  /* Imagen del logo: redondeada y con tamaño fijo */
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-right: 1rem;
-}
 
 .titulo h1 {
   /* Título principal: color vino, grande y en negrita */
@@ -68,6 +50,7 @@ body {
 .titulo h2 {
   /* Subtítulo: también color vino y un poco más pequeño */
   color: var(--vino);
+  text-align: center;
   font-size: 3rem;
 }
 
@@ -76,11 +59,23 @@ section {
   scroll-margin-top: 200px;
 }
 
-#nosotros .titulo-nosotros {
-  /* Centrado del título de la sección 'Nosotros' */
-  text-align: center;
+#nosotros .titulo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
+  margin-bottom: 20px;
 }
+
+#nosotros .titulo h1 {
+  font-size: 40px;
+  font-weight: 900;
+  text-shadow: 2px 2px 4px #ccc;
+  color: #333;
+  text-align: center;
+  margin: 0;
+}
+
 
 .nav ul {
   /* Lista del menú de navegación: horizontal y con espacio entre elementos */
@@ -101,8 +96,7 @@ section {
   transition: background-color 0.3s;
 }
 
-.nav a:hover,
-.nav a.activo {
+.nav a:hover {
   /* Efecto hover y enlace activo: fondo vino y texto blanco */
   background-color: var(--vino);
   color: white;
@@ -201,7 +195,6 @@ section {
     margin-top: 2rem;
   }  
 }
-  
 
   #nosotros {
   /* Estilos para la sección "Nosotros" */
@@ -211,53 +204,26 @@ section {
   text-align: center;
 }
 
-#nosotros .titulo {
-  /* Título de la sección "Nosotros" */
-  font-size: 60px;
-  color: #333;
-  margin-bottom: 40px;
-  font-weight: 900;
-  text-shadow: 2px 2px 4px #ccc;
-}
+
 
 /* CONTENEDOR Y CARRUSEL */
-.carrusel-contenedor {
-  /* Contenedor del carrusel: ancho limitado y centrado */
-  position: relative;
-  width: 100%;
-  max-width: 1000px;
-  margin: auto;
-  overflow: hidden;
-}
 
-.carrusel {
-  /* Carrusel como fila horizontal desplazable */
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  width: 100%;
-}
+
 
 /* TARJETAS DENTRO DEL CARRUSEL */
 .tarjeta {
-  /* Tarjetas individuales dentro del carrusel */
-  min-height: 600px;
-  flex: 0 0 100%;
+  /* Tarjetas individuales dentro del carrusel */ 
   padding: 30px;
   border-radius: 20px;
   display: flex;
   gap: 30px;
   align-items: center;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  color: white;
-  box-sizing: border-box;
 }
 
 .tarjeta img {
   /* Imagen dentro de la tarjeta */
   max-width: 200px;
   height: auto;
-  border-radius: 20px;
-  object-fit: cover;
 }
 
 .tarjeta .contenido {
@@ -284,30 +250,6 @@ section {
 .color2 { background-color: #EECC70; color: #000; } /* amarillo con texto negro */
 .color3 { background-color: #82071B; } /* vino */
 
-/* FLECHAS DE NAVEGACIÓN DEL CARRUSEL */
-.nav-btn {
-  /* Botones de navegación izquierda y derecha */
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.8);
-  border: none;
-  font-size: 40px;
-  color: #333;
-  cursor: pointer;
-  z-index: 20;
-  padding: 10px;
-  border-radius: 50%;
-  transition: background 0.3s;
-}
-
-.nav-btn:hover {
-  /* Efecto hover en los botones de navegación */
-  background: rgba(255, 255, 255, 1);
-}
-
-.nav-btn.prev { left: 10px; }
-.nav-btn.next { right: 10px; }
 
 /* VERSIÓN RESPONSIVE PARA CELULARES */
 @media screen and (max-width: 768px) {
@@ -451,187 +393,62 @@ section {
 
 /* Sección de nuestras instalaciones con video e información */
 .nuestras-instalaciones {
-  background-color: white;
-  color: yellow;
+  padding: 40px 20px;
+  background-color: #f8f8f8;
+}
+
+.instalaciones-container {
   display: flex;
-  align-items: center;
-  padding: 20px;
-  height: 500px;
-  gap: 20px;
-}
-
-/* Estilo del contenedor de video */
-.video-card {
-  flex: 1;
-  border: 2px solid yellow;
-  border-radius: 8px;
-  padding: 10px;
-  background-color: #fff;
-  box-sizing: border-box;
-}
-
-/* Video embebido dentro del contenedor */
-.video-card iframe {
-  width: 100%;
-  height: 200px;
-  border: none;
-  border-radius: 6px;
-}
-
-/* Contenedor del título de la sección */
-.titulo {
-  flex: 1;
-  text-align: right;
-}
-
-.titulo h2 {
-  margin: 0;
-  font-size: 2.5rem;
-}
-
-/* Sección de talleres (actividades) con diseño horizontal */
-.talleres-section {
-  min-height: 460px;
-  display: flex;
-  align-items: center;
-  padding: 20px;
-  background-color: white;
-  gap: 30px;
-}
-
-/* Carrusel visual con fondo de color degradado */
-.carrusel {
-  position: relative;
-  flex: 1;
-  height: 200px;
-  background-color: #c2e7ff;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* Fondo decorativo en forma de degradado */
-.fondo {
-  background: linear-gradient(to top, #8bc34a 50%, #c2e7ff 50%);
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: 0;
-  border-radius: 8px;
-}
-
-/* Flechas para navegar el carrusel */
-.flecha {
-  position: relative;
-  z-index: 1;
-  font-size: 2rem;
-  color: black;
-  padding: 0 10px;
-  cursor: pointer;
-}
-
-/* Redefinición de estilos para la sección talleres */
-.talleres-section {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 20px;
-  background-color: var(--amarillo);
-}
-
-/* Contenedor del carrusel de imágenes */
-.carrusel-imagenes {
-  position: relative;
-  width: 300px;
-  height: 250px;
-  overflow: hidden;
-  border-radius: 12px;
-  background-color: #eee;
-  display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
+  gap: 40px;
 }
 
-/* Línea de imágenes en el carrusel */
-.carrusel-imagenes .imagenes {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  transition: transform 0.5s ease-in-out;
+.video-card, .titulo {
+  flex: 1 1 400px;  /* Ocupan la mitad cada uno (mínimo 400px) */
+  max-width: 600px;
+  text-align: center;
 }
 
-/* Imágenes dentro del carrusel (solo una visible a la vez) */
-.carrusel-imagenes img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: none;
-  border-radius: 12px;
-}
-
-.carrusel-imagenes img.activa {
-  display: block;
-}
-
-/* Botones del carrusel */
-.btn-carrusel {
-  position: absolute;
-  background-color: rgba(255,255,255,0.7);
-  border: none;
-  font-size: 2rem;
-  padding: 5px 10px;
-  cursor: pointer;
-  z-index: 10;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-/* Posicionamiento izquierdo del botón */
-.btn-carrusel.izquierda {
-  left: 10px;
-}
-
-/* Posicionamiento derecho del botón */
-.btn-carrusel.derecha {
-  right: 10px;
-}
-
-/* Título vertical con orientación de lectura de arriba hacia abajo */
-.titulo-vertical {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  font-size: 2.5rem;
-  color: var(--morado);
-  font-weight: bold;
-  padding: 10px 20px;
-  white-space: nowrap;
-}
-
-/* Contenedor de la lista de talleres */
-.lista-talleres {
+/* Marco estilo TV */
+.tv-frame {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  flex: 1; /* Ocupa el espacio restante */
-}
-
-/* Estilo de cada taller de la lista */
-.taller {
-  background-color: #f3f3f3;
-  padding: 10px 15px;
-  border-radius: 8px;
-  font-weight: 500;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  display: flex;
   align-items: center;
-  gap: 10px;
+  background-color: var(--vino);
+  padding: 20px;
+  border-radius: 25px;
+  box-shadow: 0 10px 25px var(--morado);
+  max-width: 600px;
+  flex: 1 1 500px;
+  position: relative;
 }
 
-.taller span {
-  font-size: 1.5rem;
+/* Pantalla donde va el video */
+.pantalla {
+  width: 100%;
+  border: 8px solid var(--amarillo);
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: black;
 }
 
+.pantalla iframe {
+  width: 100%;
+  height: 340px;
+  border: none;
+}
+
+/* Base inferior de la TV */
+.base {
+  width: 80px;
+  height: 20px;
+  background-color: var(--rosado);
+  margin-top: 15px;
+  border-radius: 5px;
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.1);
+}
 
 
 /* Contenedor principal con flexbox */
@@ -642,6 +459,10 @@ section {
   margin-top: 40px;
   padding: 0 20px;
   max-width: 100%;
+  display: flex;
+  justify-content: center; 
+  gap: 3cm;                /* Puedes cambiar a algo más flexible como gap: 3rem si prefieres */
+  padding: 20px;
 }
 
 /* Cada lado dentro del container */
@@ -662,7 +483,7 @@ section {
 /* Lista de postres */
 .lista-postres h2 {
   text-align: center;
-  margin-bottom: 15px;
+  margin-bottom: 19px;
   font-family: 'Comic Sans MS', cursive;
 }
 
@@ -1064,3 +885,212 @@ section {
   color: #333333 !important; /* color negro para texto */
 }
 
+
+/* Contactos */
+.contacto-mapa {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  background-color: #82071B;
+  padding: 30px 20px;
+  gap: 20px;
+}
+
+.info-contacto {
+  background-color: var(--morado);
+  color: white;
+  padding: 30px 20px;
+  border-radius: 20px;
+  width: 300px;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 10px 20px white;
+  animation: slideInLeft 1s ease;
+}
+
+.icono-contacto {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.info-contacto h4 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.info-contacto .telefono {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.info-contacto h5 {
+  margin-top: 20px;
+  font-size: 1.1rem;
+}
+
+.info-contacto p {
+  margin: 5px 0;
+}
+
+.decorativo {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 60px;
+  animation: bounce 2s infinite;
+}
+
+.mapa-contacto {
+  flex: 1 1 400px;
+  height: 390px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px gray;
+  animation: fadeIn 1s ease;
+}
+
+/* Animaciones */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Talleres */
+.talleres-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: var(--rosado);
+  position: relative;
+  overflow: hidden;
+}
+
+.titulo-vertical {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--morado);
+  margin-left: 10px;
+}
+
+.carrusel-vertical-container {
+  height: 300px; /* Ajusta el alto visible del carrusel */
+  overflow: hidden;
+  width: 80%;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  background-color: white;
+  position: relative;
+}
+
+.carrusel-vertical {
+  display: flex;
+  flex-direction: column;
+  animation: scrollVertical 20s linear infinite;
+}
+
+.carrusel-vertical:hover {
+  animation-play-state: paused;
+}
+
+.taller-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  gap: 15px;
+  min-height: 150px;
+  border-bottom: 1px solid #eee;
+  transition: transform 0.3s;
+}
+
+.taller-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.info-taller {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.info-taller span {
+  font-size: 1.5rem;
+}
+
+/* Animación vertical infinita */
+@keyframes scrollVertical {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+.talleres-section {
+  background-color: var(--amarillo); /* muy suave */
+
+}
+
+
+
+
+/* Encabezado principal más compacto */
+.header {
+  background-color: #eac6e9; /* o el color lila que estés usando */
+  padding: 0.5rem 1rem; /* Reduce el espacio interno */
+}
+
+/* Contenido del header alineado horizontalmente */
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Contenedor del logo y título reducido */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo {
+  height: 50px; /* Reduce tamaño del logo si es necesario */
+}
+
+/* Título más compacto */
+.titulo h1 {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.titulo h2 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Menú de navegación alineado a la derecha */
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+  justify-content: flex-end;
+}
